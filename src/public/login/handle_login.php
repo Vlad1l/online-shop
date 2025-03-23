@@ -23,8 +23,8 @@ else {
         session_start();
         $_SESSION['userId'] = $user['id'];
         $_SESSION['userName'] = $user['name'];
-        header("Location: ./catalog.php");
+        header("Location: ./catalog");
     }
 }
 
-require_once "./login_form.php";
+require_once "./login/login_form.php";

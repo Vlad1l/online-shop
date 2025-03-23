@@ -5,8 +5,8 @@ services:
   ports:
    - 81:80
   volumes:
-   - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-   - ./:/var/www/html
+   - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+   - ./src/public/:/var/www/html/src/public
   restart: always
   depends_on:
    - php-fpm
@@ -15,7 +15,7 @@ services:
  php-fpm:
   build: ./docker
   volumes:
-   - ./:/var/www/html
+   - ./src/public/:/var/www/html/src/public
 
  db:
   image: postgres:13

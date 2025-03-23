@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <form class="form-signin" action="handle_login" method="POST">
+    <form class="form-signin" action="/login" method="POST">
         <h2 class="form-signin-heading">Please login</h2>
         <?php if (isset($errors['username']) or isset($errors['password'])): ?>
             <label style="color: red"> <?php echo (isset($errors['username'])) ? $errors['username']: $errors['password']; ?> </label>

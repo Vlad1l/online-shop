@@ -1,5 +1,5 @@
 <div class="container">
-    <a href="/handle_profile.php" method="POST">My profile</a>
+    <a href="/profile" method="POST">My profile</a>
     <h3>Catalog</h3>
     <div class="card-deck">
         <?php foreach ($products as $product): ?>

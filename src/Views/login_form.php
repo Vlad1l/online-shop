@@ -1,4 +1,5 @@
 <div class="wrapper">
+    <a href="/registration" method="GET">Registration</a>
     <form class="form-signin" action="/login" method="POST">
         <h2 class="form-signin-heading">Please login</h2>
         <?php if (isset($errors['username']) or isset($errors['password'])): ?>

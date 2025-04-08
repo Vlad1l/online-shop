@@ -1,27 +1,25 @@
-<form action="/add-product" method="POST">
+<form action="/profile-change" method="POST">
+    <a href="/profile" method="GET">Back to profile</a>
     <div class="container">
-        <h1>Add Product</h1>
-        <p>Please fill in this form to create an account.</p>
+        <h1>Change profile</h1>
+        <p>Please fill in this form to change profile.</p>
         <hr>
 
-        <label for="product_id"><b>Product-id</b></label>
-        <?php if (isset($errors['product_id'])): ?>
-            <label style="color: red"> <?php echo $errors['product_id']; ?> </label>
+        <label for="name"><b>New name</b></label>
+        <?php if (isset($errors['name'])): ?>
+            <label style="color: red"> <?php echo $errors['name']; ?> </label>
         <?php endif; ?>
-        <input type="text" placeholder="Enter product_id" name="product_id" id="product_id" required>
+        <input type="text" name="name" id="name" value="<?php echo $user['name'];?>" required>
 
-        <label for="amount"><b>Amount</b></label>
-        <?php if (isset($errors['amount'])): ?>
-            <label style="color: red"> <?php echo $errors['amount']; ?> </label>
+        <label for="email"><b>New email</b></label>
+        <?php if (isset($errors['email'])): ?>
+            <label style="color: red"> <?php echo $errors['email']; ?> </label>
         <?php endif; ?>
-        <input type="text" placeholder="Enter amount" name="amount" id="amount" required>
+        <input type="text" name="email" id="email" value="<?php echo $user['email'];?>" required>
 
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-        <button type="submit" class="add_product_btn">Add product</button>
-    </div>
+        <hr>
 
-    <div class="container signin">
-        <p>Already have an account? <a href="#">Sign in</a>.</p>
+        <button type="submit" class="changebtn">Change</button>
     </div>
 </form>
 

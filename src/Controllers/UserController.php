@@ -1,13 +1,13 @@
 <?php
 
+namespace Controllers;
 
 class UserController
 {
-    private User $user;
+    private \Model\User $user;
 
     public function __construct() {
-        require_once '../Model/User.php';
-        $this->user = new User();
+        $this->user = new \Model\User();
     }
 
     public function getRegistrate()

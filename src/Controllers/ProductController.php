@@ -1,5 +1,7 @@
 <?php
 
+namespace Controllers;
+
 class ProductController
 {
     public function getCatalog()
@@ -12,7 +14,7 @@ class ProductController
             header('Location: /login');
             exit;
         } else {
-            $pdo = new PDO("pgsql:host=db;port=5432; dbname=mydb", 'user', 'pass');
+            $pdo = new \PDO("pgsql:host=db;port=5432; dbname=mydb", 'user', 'pass');
             $stmt = $pdo->query("SELECT * FROM products");
             $products = $stmt->fetchAll();
             require_once '../Views/catalog.php';

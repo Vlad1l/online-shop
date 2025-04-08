@@ -1,12 +1,14 @@
 <?php
 
+namespace Model;
+
 class User
 {
-    private PDO $PDO;
+    private \PDO $PDO;
 
     public function __construct()
     {
-        $this->PDO = new PDO("pgsql:host=db; port=5432; dbname=mydb", 'user', 'pass');
+        $this->PDO = new \PDO("pgsql:host=db; port=5432; dbname=mydb", 'user', 'pass');
     }
 
     public function getByEmail(string $email) {

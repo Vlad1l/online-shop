@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class App
 {
     private array $routes = [
@@ -66,10 +68,8 @@ class App
             if (isset($routeMethods[$requestMethod])) {
                 $handler = $routeMethods[$requestMethod];
 
-                $class = $handler['class'];
+                $class = "\Controllers\\" . $handler['class'];
                 $method = $handler['method'];
-
-                require_once "../Controllers/$class.php";
 
                 $controller = new $class();
                 $controller->$method();
